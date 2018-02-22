@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected EditText emailText;
     protected EditText passwordText;
     protected Button loginButton;
+    protected TextView signUpButton;
 
     protected String email;
     protected String password;
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         emailText = findViewById(R.id.inputEmail);
         passwordText = findViewById(R.id.inputPassword);
         loginButton = findViewById(R.id.loginButton);
+        signUpButton = findViewById(R.id.signUp);
 
         loginButton.setOnClickListener(loginListener);
+        signUpButton.setOnClickListener(signUpListener);
     }
 
     public View.OnClickListener loginListener = new View.OnClickListener() {
@@ -50,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivityForResult(homeIntent, 1);
             }
+        }
+    };
+
+    public View.OnClickListener signUpListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            Intent sui = new Intent(MainActivity.this, SignUpActivity.class);
+            startActivity(sui);
         }
     };
 }

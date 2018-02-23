@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 passwordText.setError("Incorrect password. Please try again.");
                 valid  =  false;
             }
-
+            // TODO: Implement login
             if (valid) {
                 Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivityForResult(homeIntent, 1);

@@ -64,8 +64,11 @@ public class SignUpActivity extends AppCompatActivity {
                 return;
             }
 
+            //TODO: Implement sign up
             if(valid) {
                 Intent homeIntent = new Intent(SignUpActivity.this, HomeActivity.class);
+                homeIntent.putExtra("fullName", fullNameText);
+                homeIntent.putExtra("email", emailText);
                 startActivity(homeIntent);
             }
 
